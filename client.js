@@ -1,11 +1,13 @@
 //frontend
 //Make connection
 var io = require('socket.io-client')
-var socket = io.connect('http://localhost:4000');
+var socket = io.connect('http://54.153.13.140:4001');
+var ip = require('ip')
 
 
 setInterval(()=>{
     socket.emit('chat', { //grab the message emit the chat and send it to the server
         message: "hi",
+        ip: ip.address(),
     });
 }, 2000)
