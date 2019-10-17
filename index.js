@@ -1,11 +1,12 @@
 //Server
 var express = require('express');
 var socket = require('socket.io') //defining socket,io
-
+var port = 4001;
+var ip = require('ip')
 //App setup
 var app = express();
-var server = app.listen(4000, function(){
-    console.log('listening to requests on port 4000,');
+var server = app.listen(port, ip.address(), function(){
+  console.log('listening to requests on port 4000,');
 });
 
 // Static files using middleware
@@ -26,4 +27,6 @@ io.on('connection', function(socket) { //awaiting for connection, every client h
     //     socket.broadcast.emit('typing', data)
     // });
 });
+
+//app.listen(port, ip.address(), () => console.log(`Port ${port}!, ${ip.address()}`))
 
