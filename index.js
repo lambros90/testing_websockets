@@ -6,7 +6,7 @@ var ip = require('ip')
 //App setup
 var app = express();
 var server = app.listen(port, ip.address(), function(){
-  console.log('listening to requests on port 4000,');
+  console.log(`listening to requests on port ${port}`);
 });
 
 // Static files using middleware
