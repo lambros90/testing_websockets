@@ -9,7 +9,7 @@ var server = app.listen(4000, function(){
 });
 
 // Static files using middleware
-app.use(express.static('public')); //this app servers whatever is inside public folder to the browser
+// app.use(express.static('public')); //this app servers whatever is inside public folder to the browser
 
 //Socket setup
 var io = socket(server); //socket.io will work on the 'server'
@@ -19,11 +19,11 @@ io.on('connection', function(socket) { //awaiting for connection, every client h
 
     socket.on('chat', function(data){ //listening to all sockets when chat is received, pass it to the function
         console.log(data);
-        io.sockets.emit('chat', data); //grab all the sockets and emit the chat message to all different clients
+        // io.sockets.emit('chat', data); //grab all the sockets and emit the chat message to all different clients
     });
 
-    socket.on('typing', function(data){
-        socket.broadcast.emit('typing', data)
-    });
+    // socket.on('typing', function(data){
+    //     socket.broadcast.emit('typing', data)
+    // });
 });
 
