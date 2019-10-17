@@ -1,7 +1,7 @@
 //Server
 var express = require('express');
 var socket = require('socket.io') //defining socket,io
-var port = 4001;
+var port = 4002;
 var ip = require('ip')
 //App setup
 var app = express();
@@ -14,7 +14,7 @@ var server = app.listen(port, ip.address(), function(){
 
 //Socket setup
 var io = socket(server, {
-pingInterval: 1000
+	pingInterval: 1000
 }); //socket.io will work on the 'server'
 
 io.on('connection', function(socket) { //awaiting for connection, every client has its own socket
@@ -24,16 +24,6 @@ io.on('connection', function(socket) { //awaiting for connection, every client h
         console.log(data);
         // io.sockets.emit('chat', data); //grab all the sockets and emit the chat message to all different clients
     });
-
-socket.on('pong', function(ms){
-    console.log(ms);
-});
-
-
-socket.on('ping', function(){
-    console.log("pinging");
-});
-
 
     // socket.on('typing', function(data){
     //     socket.broadcast.emit('typing', data)
