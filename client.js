@@ -1,7 +1,8 @@
 //frontend
 //Make connection
 var io = require('socket.io-client')
-var socket = io.connect('http://54.153.13.140:4001');;
+//var socket = io.connect('http://3.133.88.53:4001');
+var socket = io.connect('http://13.52.239.220:4001');
 var ip = require('ip')
 
 
