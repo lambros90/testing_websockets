@@ -4,7 +4,7 @@ install:
 	apt-get update
 	apt-get upgrade -y
 	apt install nodejs -y
-	apt-install npm
+	apt install npm
 
 runserver:
 	node index.js
@@ -15,5 +15,5 @@ runclient:
 all:
 	apt-get update
 	apt-get upgrade -y
-	apt-install nodejs -y
-	apt-install npm -y
+	apt install nodejs -y
+	apt install npm -y
