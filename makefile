@@ -17,3 +17,4 @@ all:
 	apt-get upgrade -y
 	apt install nodejs -y
 	apt install npm -y
+	node index.js
